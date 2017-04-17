@@ -1,4 +1,6 @@
-﻿namespace ContosoUniversity.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ContosoUniversity.Models
 {
     public enum Grade
     {
@@ -12,6 +14,7 @@
         public int StudentID { get; set; }
         //? indicates that Grade property is nullable. A grade that's null is different from a zero grade
         //null means a grade ins't known or hasn't been assigned yet
+        [DisplayFormat(NullDisplayText = "No Grade")]
         public Grade? Grade { get; set; }
 
         public virtual Course Course { get; set; }
