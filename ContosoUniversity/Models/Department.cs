@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Infrastructure;
 
 namespace ContosoUniversity.Models
 {
@@ -21,7 +22,11 @@ namespace ContosoUniversity.Models
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
+        [Display(Name = "Administrator")]
         public int? InstructorID { get; set; }
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
         public virtual Instructor Administrator { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
