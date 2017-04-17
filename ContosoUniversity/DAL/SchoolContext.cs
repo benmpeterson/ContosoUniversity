@@ -24,7 +24,7 @@ namespace ContosoUniversity.DAL
                     .ToTable("CourseInstructor"));
             //Instructs Entity Framework to use stored procedues for insert,
             //Update, and delete operations on the Department entity
-            modelBuilder.Entity<Department>().MapToStoredProcedures();
+            //modelBuilder.Entity<Department>().MapToStoredProcedures();
         }
     }
 }
