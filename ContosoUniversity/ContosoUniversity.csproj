@@ -168,17 +168,13 @@
     </Compile>
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Migrations\201704171631544_ComplexDataModel.cs" />
-    <Compile Include="Migrations\201704171631544_ComplexDataModel.Designer.cs">
-      <DependentUpon>201704171631544_ComplexDataModel.cs</DependentUpon>
+    <Compile Include="Migrations\201704180027263_NewDatabase.cs" />
+    <Compile Include="Migrations\201704180027263_NewDatabase.Designer.cs">
+      <DependentUpon>201704180027263_NewDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704171636065_ComplexDataModel2.cs" />
-    <Compile Include="Migrations\201704171636065_ComplexDataModel2.Designer.cs">
-      <DependentUpon>201704171636065_ComplexDataModel2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201704172335372_RowVersion.cs" />
-    <Compile Include="Migrations\201704172335372_RowVersion.Designer.cs">
-      <DependentUpon>201704172335372_RowVersion.cs</DependentUpon>
+    <Compile Include="Migrations\201704180032460_NewDatabase2.cs" />
+    <Compile Include="Migrations\201704180032460_NewDatabase2.Designer.cs">
+      <DependentUpon>201704180032460_NewDatabase2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
@@ -269,14 +265,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704171631544_ComplexDataModel.resx">
-      <DependentUpon>201704171631544_ComplexDataModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704180027263_NewDatabase.resx">
+      <DependentUpon>201704180027263_NewDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704171636065_ComplexDataModel2.resx">
-      <DependentUpon>201704171636065_ComplexDataModel2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704172335372_RowVersion.resx">
-      <DependentUpon>201704172335372_RowVersion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704180032460_NewDatabase2.resx">
+      <DependentUpon>201704180032460_NewDatabase2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

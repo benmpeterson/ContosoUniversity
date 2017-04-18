@@ -3,7 +3,7 @@ namespace ContosoUniversity.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ComplexDataModel : DbMigration
+    public partial class NewDatabase : DbMigration
     {
         public override void Up()
         {
@@ -29,6 +29,7 @@ namespace ContosoUniversity.Migrations
                         Budget = c.Decimal(nullable: false, storeType: "money"),
                         StartDate = c.DateTime(nullable: false),
                         InstructorID = c.Int(),
+                        RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                     })
                 .PrimaryKey(t => t.DepartmentID)
                 .ForeignKey("dbo.Instructor", t => t.InstructorID)
@@ -94,15 +95,9 @@ namespace ContosoUniversity.Migrations
                 .ForeignKey("dbo.Instructor", t => t.InstructorID, cascadeDelete: true)
                 .Index(t => t.CourseID)
                 .Index(t => t.InstructorID);
-
-            // Create  a department for course to point to.
-            Sql("INSERT INTO dbo.Department (Name, Budget, StartDate) VALUES ('Temp', 0.00, GETDATE())");
-            //  default value for FK points to department created above.
-            AddColumn("dbo.Course", "DepartmentID", c => c.Int(nullable: false, defaultValue: 1));
-            //AddColumn("dbo.Course", "DepartmentID", c => c.Int(nullable: false)); 
-
+            
         }
-
+        
         public override void Down()
         {
             DropForeignKey("dbo.CourseInstructor", "InstructorID", "dbo.Instructor");
